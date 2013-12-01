@@ -1,0 +1,10 @@
+Package: org.thebigboss.myassistive
+Name: MyAssistive
+Depends: mobilesubstrate, preferenceloader, firmware (>= 5.0), firmware (<< 7.0), com.a3tweaks.flipswitch (>= 1.0.1~beta3)
+Version: 1.5
+Architecture: iphoneos-arm
+Description: repurpose the Assistive Touch Button.
+Author: PoomSmart
+Maintainer: BigBoss
+Section: Tweaks
+Icon: file:///Library/PreferenceBundles/MyAssistiveSettings.bundle/MyAssistive@2x.png

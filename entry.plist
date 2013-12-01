@@ -1,0 +1,10 @@
+{
+	entry = {
+		bundle = "MyAssistivePref";
+		cell = PSLinkCell;
+		detail = "MyAssistivePreferenceController";
+		icon = "MyAssistive.png";
+		isController = 1;
+		label = "MyAssistive";
+	};
+}

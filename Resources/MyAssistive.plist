@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+	<key>title</key>
+    <string>MyAssistive</string>
+    <key>entry</key>
+    <dict>
+      <key>cell</key>
+      <string>PSLinkCell</string>
+      <key>icon</key>
+      <string>MyAssistive.png</string>
+      <key>label</key>
+      <string>MyAssistive</string>
+    </dict>
+  	<key>items</key>
+	<array>
+		<dict>
+        	<key>cell</key>
+        	<string>PSGroupCell</string>
+        	<key>label</key>
+        	<string>Repurpose</string>
+        	<key>footerText</key>
+			<string>For these following replacements:
+- Adjust Volume
+- Switch Apps
+- Rotate Screen
+- Adjust Brightness
+Button at Left-side will functional as unmute, decreasing or left.
+and Right-side as mute, increasing or right.
+
+Switch Apps work with iPad or iPhone/iPod with Zephyr installed.</string>
+      </dict>
+    	<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.PS.MyAssistive</string>
+			<key>key</key>
+			<string>replaceEnabled</string>
+			<key>label</key>
+			<string>Enable</string>
+			<key>PostNotification</key>
+        	<string>com.PS.MyAssistive.settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>defaults</key>
+			<string>com.PS.MyAssistive</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>myNumber</string>
+			<key>label</key>
+			<string>Replace with</string>
+			<key>PostNotification</key>
+        	<string>com.PS.MyAssistive.settingschanged</string>
+        	<key>staticTextMessage</key>
+        	<string>I will try to add more. :)</string>
+			<key>validTitles</key>
+			<array>
+				<string>Original</string>
+				<string>Toggle App Switcher</string>
+				<string>Toggle Siri</string>
+				<string>Toggle Voice Control</string>
+				<string>Take Screenshot</string>
+				<string>Triple Click</string>
+				<string>Adjust Volume</string>
+				<string>Mute / Unmute</string>
+				<string>Restart SpringBoard</string>
+				<string>Restart backboardd</string>
+				<string>Reboot</string>
+				<string>Power Down</string>
+				<string>Sleep Button</string>
+				<string>Home Button</string>
+				<string>Quit Top Application</string>
+				<string>Lock Device</string>
+				<string>Rotate Screen</string>
+				<string>Toggle Torch</string>
+				<string>Safe mode</string>
+				<string>Shake Device</string>
+				<string>Flash Screen</string>
+				<string>Toggle Lock/Unlock Orientation</string>
+				<string>Switch Apps</string>
+				<string>Toggle Wi-Fi</string>
+				<string>Toggle Airplane Mode</string>
+				<string>Toggle Bluetooth</string>
+				<string>Adjust Brightness (Temporary)</string>
+				<string>Toggle Auto Brightness</string>
+				<string>Toggle Do Not Disturb</string>
+				<string>Toggle Personal Hotspot</string>
+				<string>Toggle 3G</string>
+				<string>Toggle Data</string>
+				<string>Toggle Auto Lock</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+				<integer>4</integer>
+				<integer>5</integer>
+				<integer>6</integer>
+				<integer>7</integer>
+				<integer>8</integer>
+				<integer>9</integer>
+				<integer>10</integer>
+				<integer>11</integer>
+				<integer>12</integer>
+				<integer>13</integer>
+				<integer>14</integer>
+				<integer>15</integer>
+				<integer>16</integer>
+				<integer>17</integer>
+				<integer>18</integer>
+				<integer>19</integer>
+				<integer>20</integer>
+				<integer>21</integer>
+				<integer>22</integer>
+				<integer>23</integer>
+				<integer>24</integer>
+				<integer>25</integer>
+				<integer>26</integer>
+				<integer>27</integer>
+				<integer>28</integer>
+				<integer>29</integer>
+				<integer>30</integer>
+				<integer>31</integer>
+				<integer>32</integer>
+				<integer>33</integer>
+			</array>
+		</dict>
+		<dict>
+        <key>cell</key>
+        <string>PSGroupCell</string>
+        <key>label</key>
+        <string>Modifications</string>
+        <key>footerText</key>
+        <string>*When you take Screenshot, just like in iOS 5</string>
+      </dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.PS.MyAssistive</string>
+			<key>key</key>
+			<string>noLockPosEnabled</string>
+			<key>label</key>
+			<string>No Snap Position</string>
+			<key>PostNotification</key>
+        	<string>com.PS.MyAssistive.settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.PS.MyAssistive</string>
+			<key>key</key>
+			<string>noHideSSEnabled</string>
+			<key>label</key>
+			<string>No Hide*</string>
+			<key>PostNotification</key>
+        	<string>com.PS.MyAssistive.settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.PS.MyAssistive</string>
+			<key>key</key>
+			<string>blueIconEnabled</string>
+			<key>label</key>
+			<string>Blue Icons</string>
+			<key>PostNotification</key>
+        	<string>com.PS.MyAssistive.settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.PS.MyAssistive</string>
+			<key>key</key>
+			<string>lockPosEnabled</string>
+			<key>label</key>
+			<string>Lock Position</string>
+			<key>PostNotification</key>
+        	<string>com.PS.MyAssistive.settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.PS.MyAssistive</string>
+			<key>key</key>
+			<string>alwaysFade</string>
+			<key>label</key>
+			<string>Always Fade</string>
+			<key>PostNotification</key>
+        	<string>com.PS.MyAssistive.settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.PS.MyAssistive</string>
+			<key>key</key>
+			<string>noWarn</string>
+			<key>label</key>
+			<string>Prevent Cydia Warning</string>
+			<key>PostNotification</key>
+        	<string>com.PS.MyAssistive.settingschanged</string>
+		</dict>
+	<dict>
+		<key>cell</key>
+        <string>PSGroupCell</string>
+        <key>label</key>
+        <string>Backgroud Blur Radius</string>
+        <key>footerText</key>
+        <string>Restart Assistive Touch to take effect.</string>
+      </dict>
+       <dict>
+			<key>PostNotification</key>
+			<string>com.PS.MyAssistive.settingschanged</string>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>0.0</real>
+			<key>defaults</key>
+			<string>com.PS.MyAssistive</string>
+			<key>key</key>
+			<string>blurBG</string>
+			<key>max</key>
+			<real>10.0</real>
+			<key>min</key>
+			<real>0.0</real>
+			<key>showValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>restartAS:</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Restart Assistive Touch</string>
+		</dict>
+		<dict>
+		<key>cell</key>
+        <string>PSGroupCell</string>
+        <key>label</key>
+        <string>Backgroud Opacity</string>
+        <key>footerText</key>
+        <string></string>
+      </dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.PS.MyAssistive.settingschanged</string>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>1.0</real>
+			<key>defaults</key>
+			<string>com.PS.MyAssistive</string>
+			<key>key</key>
+			<string>bgAlpha</string>
+			<key>max</key>
+			<real>1.0</real>
+			<key>min</key>
+			<real>0.0</real>
+			<key>showValue</key>
+			<false/>
+			<key>leftImage</key>
+			<string>alpha</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.PS.MyAssistive</string>
+			<key>key</key>
+			<string>noSetAlpha</string>
+			<key>label</key>
+			<string>No Set Alpha</string>
+			<key>PostNotification</key>
+        	<string>com.PS.MyAssistive.settingschanged</string>
+		</dict>
+	<dict>
+		<key>cell</key>
+        <string>PSGroupCell</string>
+        <key>label</key>
+        <string>Text Color</string>
+        <key>footerText</key>
+        <string></string>
+      </dict>
+      <dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.PS.MyAssistive</string>
+			<key>key</key>
+			<string>customTextColor</string>
+			<key>label</key>
+			<string>Custom Color</string>
+			<key>PostNotification</key>
+        	<string>com.PS.MyAssistive.settingschanged</string>
+		</dict>
+      <dict>
+			<key>PostNotification</key>
+			<string>com.PS.MyAssistive.settingschanged</string>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>1.0</real>
+			<key>defaults</key>
+			<string>com.PS.MyAssistive</string>
+			<key>key</key>
+			<string>R</string>
+			<key>max</key>
+			<real>1.0</real>
+			<key>min</key>
+			<real>0.0</real>
+			<key>showValue</key>
+			<false/>
+			<key>leftImage</key>
+			<string>r</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.PS.MyAssistive.settingschanged</string>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>1.0</real>
+			<key>defaults</key>
+			<string>com.PS.MyAssistive</string>
+			<key>key</key>
+			<string>G</string>
+			<key>max</key>
+			<real>1.0</real>
+			<key>min</key>
+			<real>0.0</real>
+			<key>showValue</key>
+			<false/>
+			<key>leftImage</key>
+			<string>g</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.PS.MyAssistive.settingschanged</string>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>1.0</real>
+			<key>defaults</key>
+			<string>com.PS.MyAssistive</string>
+			<key>key</key>
+			<string>B</string>
+			<key>max</key>
+			<real>1.0</real>
+			<key>min</key>
+			<real>0.0</real>
+			<key>showValue</key>
+			<false/>
+			<key>leftImage</key>
+			<string>b</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.PS.MyAssistive.settingschanged</string>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>1.0</real>
+			<key>defaults</key>
+			<string>com.PS.MyAssistive</string>
+			<key>key</key>
+			<string>alpha</string>
+			<key>max</key>
+			<real>1.0</real>
+			<key>min</key>
+			<real>0.0</real>
+			<key>showValue</key>
+			<false/>
+			<key>leftImage</key>
+			<string>alpha</string>
+		</dict>
+      <dict>
+        <key>cell</key>
+        <string>PSGroupCell</string>
+        <key>footerText</key>
+        <string>© 2013 Thuchapol Unprasert
+(@PoomSmart)</string>
+      </dict>
+    </array>
+  </dict>
+</plist>

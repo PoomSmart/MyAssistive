@@ -1,0 +1,5 @@
+{
+	Filter = {
+		Bundles = ( "com.apple.assistivetouchd", "com.apple.HandTool", "com.apple.springboard" );
+	};
+}
