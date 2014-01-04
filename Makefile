@@ -2,8 +2,7 @@ GO_EASY_ON_ME = 1
 
 include theos/makefiles/common.mk
 
-export SDKVERSION = 5.0
-export ARCHS = armv7 armv7s
+export ARCHS = armv7 armv7s arm64
 
 TWEAK_NAME = MyAssistive
 MyAssistive_FILES = MyAssistive.xm
