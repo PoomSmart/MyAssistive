@@ -32,6 +32,18 @@ static void MALoader()
 
 %hook HNDDisplayManager
 
+/*- (void)initializeDisplay
+{
+	%orig;
+	UIView* contentView = MSHookIvar<UIView* >(self, "_ignoredContentView");
+	UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,0,480,480)];
+	view.userInteractionEnabled = NO;
+	view.backgroundColor=[UIColor blackColor];
+	view.alpha = [[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.phoenix.dimmer.plist"] objectForKey:@"darkpt"] floatValue] - 0.1f;
+	[contentView addSubview:view];
+	[view release];
+}*/
+
 %new(v@:i)
 - (void)Inject:(int)num
 {
@@ -69,6 +81,29 @@ static void MALoader()
 			} else
 				[HNDController _tripleClick];
 			break;
+		case 7:
+		{
+			if (rockerPoint.x < 160.0f) {
+				if (noWarn) {
+					[HNDController performHardwareButton:4 state:2];
+					[HNDController performHardwareButton:4 state:3];
+				}
+				else {
+					[rocker _volumeDown:1];
+					[rocker _volumeDown:0];
+				}
+			} else {
+				if (noWarn) {
+					[HNDController performHardwareButton:3 state:2];
+					[HNDController performHardwareButton:3 state:3];
+				}
+				else {
+					[rocker _volumeUp:1];
+					[rocker _volumeUp:0];
+				}
+			}
+			break;
+		}
 		case 8 : // Mute or Unmute
 		{
 			notify_post("com.PS.MyAssistive.toggleMute");
@@ -227,22 +262,6 @@ static CGPoint rockerDownPoint;
 					rockerIsPressed = NO;
 					if (rockerIsDragging == NO && rockerIsPressed == NO) {
 						switch (MyNumber) {
-							case 7:
-							{
-								if (rockerPoint.x < 160.0f) {
-									if (noWarn)
-										[HNDController performHardwareButton:4 state:3];
-									else
-										[rocker _volumeDown:0];
-								}
-								else {
-									if (noWarn)
-										[HNDController performHardwareButton:3 state:3];
-									else
-										[rocker _volumeUp:0];
-								}
-								break;
-							}
 							case 13 : // Lock Button
 							{
 								if (noWarn)
@@ -277,22 +296,6 @@ static CGPoint rockerDownPoint;
 				dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.05*NSEC_PER_SEC), dispatch_get_main_queue(), ^(void){
 				if (rockerIsDragging == NO && rockerIsPressed == YES) {
 					switch (MyNumber) {
-						case 7:
-						{
-							if (rockerPoint.x < 160.0f) {
-								if (noWarn)
-									[HNDController performHardwareButton:4 state:2];
-								else
-									[rocker _volumeDown:1];
-							}
-							else {
-								if (noWarn)
-									[HNDController performHardwareButton:3 state:2];
-								else
-									[rocker _volumeUp:1];
-							}
-							break;
-						}
 						case 13 : // Lock Button
 						{
 							if (noWarn)
@@ -391,7 +394,11 @@ static CGPoint rockerDownPoint;
 - (void)_setBackgroundWithType:(int)type
 {
 	%orig;
-	UIImageView* background = MSHookIvar<UIImageView* >(self, "_background");
+	UIImageView *background;
+	if (isiOS7)
+		background = MSHookIvar<UIImageView *>(self, "_nubbitForeground");
+	else
+		background = MSHookIvar<UIImageView *>(self, "_background");
 	CAFilter *filter = [CAFilter filterWithName:@"gaussianBlur"];
 	[filter setValue:[NSNumber numberWithFloat:blurBG] forKey:@"inputRadius"];
 	background.layer.shouldRasterize = YES;
@@ -408,7 +415,11 @@ static CGPoint rockerDownPoint;
 - (void)_resetVisibility:(BOOL)visibility
 {
 	%orig(alwaysFade ? NO : visibility);
-	UIImageView* background = MSHookIvar<UIImageView* >(self, "_background");
+	UIImageView *background;
+	if (isiOS7)
+		background = MSHookIvar<UIImageView *>(self, "_nubbitForeground");
+	else
+		background = MSHookIvar<UIImageView *>(self, "_background");
 	CAFilter *filter = [CAFilter filterWithType:@"gaussianBlur"];
 	[filter setValue:[NSNumber numberWithFloat:blurBG] forKey:@"inputRadius"];
 	background.layer.shouldRasterize = YES;
