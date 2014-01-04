@@ -77,7 +77,7 @@ Switch Apps work with iPad or iPhone/iPod with Zephyr installed.</string>
 				<string>Sleep Button</string>
 				<string>Home Button</string>
 				<string>Quit Top Application</string>
-				<string>Lock Device</string>
+				<string>Lock Device (iOS &lt;7)</string>
 				<string>Rotate Screen</string>
 				<string>Toggle Torch</string>
 				<string>Safe mode</string>
@@ -231,7 +231,7 @@ Switch Apps work with iPad or iPhone/iPod with Zephyr installed.</string>
         <key>label</key>
         <string>Backgroud Blur Radius</string>
         <key>footerText</key>
-        <string>Restart Assistive Touch to take effect.</string>
+        <string>Restart Assistive Touch to take effect. (No need for iOS 7)</string>
       </dict>
        <dict>
 			<key>PostNotification</key>
@@ -264,8 +264,6 @@ Switch Apps work with iPad or iPhone/iPod with Zephyr installed.</string>
         <string>PSGroupCell</string>
         <key>label</key>
         <string>Backgroud Opacity</string>
-        <key>footerText</key>
-        <string></string>
       </dict>
 		<dict>
 			<key>PostNotification</key>
@@ -306,8 +304,6 @@ Switch Apps work with iPad or iPhone/iPod with Zephyr installed.</string>
         <string>PSGroupCell</string>
         <key>label</key>
         <string>Text Color</string>
-        <key>footerText</key>
-        <string></string>
       </dict>
       <dict>
 			<key>cell</key>
@@ -407,7 +403,7 @@ Switch Apps work with iPad or iPhone/iPod with Zephyr installed.</string>
         <key>cell</key>
         <string>PSGroupCell</string>
         <key>footerText</key>
-        <string>© 2013 Thuchapol Unprasert
+        <string>© 2013 - 2014 Thuchapol Unprasert
 (@PoomSmart)</string>
       </dict>
     </array>

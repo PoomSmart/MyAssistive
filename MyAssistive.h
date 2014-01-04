@@ -18,6 +18,7 @@
 #define Float(key, defaultValue) ([dict objectForKey:key] ? [[dict objectForKey:key] floatValue] : defaultValue)
 #define isiOS5 (kCFCoreFoundationVersionNumber >= 675.00 && kCFCoreFoundationVersionNumber < 793.00)
 #define isiOS6 (kCFCoreFoundationVersionNumber == 793.00)
+#define isiOS7 (kCFCoreFoundationVersionNumber > 793.00)
 
 #define AddObserver(voidName, identifier) CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, voidName, CFSTR(identifier), NULL, CFNotificationSuspensionBehaviorCoalesce);
 #define VOID(name) name(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo)
